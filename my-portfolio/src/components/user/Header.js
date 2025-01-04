@@ -29,7 +29,7 @@ export default function Header() {
         <header>
             <nav>
                 {
-                    Boolean(admin.username)
+                    Boolean(admin.email)
                         ? adminHeader
                         : userHeader
                 }

@@ -116,6 +116,7 @@ header nav ul li a {
 #projects .project h2 {
   margin-top: 10;
 }
+input
 
 #projects .project p {
   margin-top: 10;
@@ -218,6 +219,7 @@ header nav ul li a {
 }
 
 #admin form input[type="text"],
+#admin form input[type="email"],
 #admin form input[type="password"],
 #admin form textarea {
   width: 100%;

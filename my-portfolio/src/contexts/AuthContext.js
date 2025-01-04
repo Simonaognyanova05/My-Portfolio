@@ -4,7 +4,7 @@ export const AuthContext = createContext();
 
 const initialState = {
     _id: '',
-    username: '',
+    email: '',
 };
 
 export const AuthProvider = ({ children }) => {

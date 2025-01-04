@@ -1,11 +1,21 @@
-export async function updateAboutMe(name, specialty, location, education, description, profileImage) {
-    let welcome = await fetch('http://localhost:2005/admin/about', {
-        method: 'PUT',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify({ name, specialty, location, education, description, profileImage })
-    });
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../../config/firebaseConfig";
 
-    return welcome;
+export async function updateAboutMe(name, specialty, location, education, description, profileImage) {
+    try {
+        const docRef = doc(db, "aboutMe", "admin");
+        await setDoc(docRef, {
+            name,
+            specialty,
+            location,
+            education,
+            description,
+            profileImage,
+        });
+
+        return { status: 200, message: "About Me updated successfully" };
+    } catch (error) {
+        console.error("Error updating About Me:", error);
+        return { status: 500, message: "Failed to update About Me" };
+    }
 }

@@ -1,6 +1,7 @@
 import { useAuth } from "../../contexts/AuthContext";
-import { useNavigate } from 'react-router-dom';
-import { loginAdmin } from '../../services/admin/loginAdmin';
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../config/firebaseConfig"; // Увери се, че пътят е правилен
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -9,36 +10,59 @@ export default function Login() {
     const loginHandler = async (e) => {
         e.preventDefault();
 
-        let formData = new FormData(e.currentTarget);
-        let { username, password } = Object.fromEntries(formData);
+        const formData = new FormData(e.currentTarget);
+        const { email, password } = Object.fromEntries(formData);
 
-        let adminResult = await loginAdmin(username, password);
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
 
-        if (adminResult.status === 400) {
-            alert('Admin does not exist!');
-            return;
-        };
-        if (adminResult.status === 401) {
-            alert('Incorrect password!');
-            return;
-        };
+            onLoginAdmin({
+                _id: user.uid,
+                email: user.email
+            });
 
-        let data = await adminResult.json();
-        onLoginAdmin(data);
-        navigate('/admin/');
-    }
+            navigate("/admin/");
+        } catch (error) {
+            if (error.code === "auth/user-not-found") {
+                alert("Admin does not exist!");
+            } else if (error.code === "auth/wrong-password") {
+                alert("Incorrect password!");
+            } else {
+                console.error("Login failed:", error);
+                alert("Failed to log in. Please try again later.");
+            }
+        }
+    };
+
     return (
         <section id="admin">
             <div className="content">
                 <h2>Admin Login</h2>
                 <form onSubmit={loginHandler}>
-                    <label htmlFor="username">Username:</label>
-                    <input type="text" id="username" name="username" required />
-
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" name="password" required />
-
-                    <input type="submit" value="Login" />
+                    <div className="form-group">
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        />
+                    </div>
+                    <button type="submit" className="btn btn-primary">
+                        Login
+                    </button>
                 </form>
             </div>
         </section>
