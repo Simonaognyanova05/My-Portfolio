@@ -1,6 +1,6 @@
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../../config/firebaseConfig"; // Увери се, че пътят е правилен
+import { auth } from "../../config/firebaseConfig"; 
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function Login() {
