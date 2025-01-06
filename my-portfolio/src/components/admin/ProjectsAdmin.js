@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { createProject } from '../../services/admin/createProject';
+import { useState } from "react";
+import { collection, addDoc } from "firebase/firestore"; 
+import { db } from "../../config/firebaseConfig"; 
 
 export default function ProjectsAdmin() {
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
 
     const createHandler = async (e) => {
         e.preventDefault();
@@ -10,15 +13,30 @@ export default function ProjectsAdmin() {
         let formData = new FormData(e.currentTarget);
         let { title, subtitle, description, gitLink, img } = Object.fromEntries(formData);
 
-        let res = await createProject(title, subtitle, description, gitLink, img);
+        try {
+            setLoading(true);
 
-        if (res.status === 200) {
-            alert('The project was created successfully!');
-            navigate('/admin/projects');
-        };
+            const docRef = await addDoc(collection(db, "projects"), {
+                title,
+                subtitle,
+                description,
+                gitLink,
+                img,
+                createdAt: new Date(), 
+            });
 
-        e.target.reset();
-    }
+            console.log("Project created with ID: ", docRef.id);
+            alert("The project was created successfully!");
+            navigate("/admin/projects");
+        } catch (error) {
+            console.error("Error creating project:", error);
+            alert("Failed to create project. Please try again.");
+        } finally {
+            setLoading(false);
+            e.target.reset();
+        }
+    };
+
     return (
         <section id="admin">
             <div className="content">
@@ -39,7 +57,9 @@ export default function ProjectsAdmin() {
                     <label htmlFor="img">Image:</label>
                     <input type="text" id="img" name="img" required />
 
-                    <input type="submit" value="Create" />
+                    <button type="submit" disabled={loading}>
+                        {loading ? "Creating..." : "Create"}
+                    </button>
                 </form>
             </div>
         </section>
