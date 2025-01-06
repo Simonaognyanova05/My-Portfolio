@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { updateAboutMe } from "../../services/admin/updateAboutMe";
 
 export default function AboutAdmin() {
@@ -7,16 +7,24 @@ export default function AboutAdmin() {
     const updateHandler = async (e) => {
         e.preventDefault();
 
-        let formData = new FormData(e.currentTarget);
-        let { name, specialty, location, education, description, profileImage } = Object.fromEntries(formData);
+        const formData = new FormData(e.currentTarget);
+        const { name, specialty, location, education, description, profileImage } = Object.fromEntries(formData);
 
-        const result = await updateAboutMe(name, specialty, location, education, description, profileImage);
+        try {
+            const result = await updateAboutMe(name, specialty, location, education, description, profileImage);
 
-        if (result.status === 200) {
-            alert('About Me page was updated successfully!');
-            navigate('/admin/');
-        };
-    }
+            if (result.status === 200) {
+                alert("About Me page was updated successfully!");
+                navigate("/admin/");
+            } else {
+                alert("Failed to update About Me. Error: " + result.message);
+            }
+        } catch (error) {
+            console.error("Unexpected error:", error);
+            alert("An unexpected error occurred. Please try again.");
+        }
+    };
+
     return (
         <section id="admin">
             <div className="content">
