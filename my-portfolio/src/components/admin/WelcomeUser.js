@@ -15,8 +15,11 @@ export default function WelcomeUser() {
         if (result.status === 200) {
             alert('Welcome page was updated successfully!');
             navigate('/admin/');
-        };
-    }
+        } else {
+            alert(`Error: ${result.message}`);
+        }
+    };
+
     return (
         <section id="admin">
             <div className="content">

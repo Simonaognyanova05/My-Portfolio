@@ -44,11 +44,6 @@ function App() {
           <Route path="/admin/about" element={<AboutAdmin />} />
           <Route path="/admin/projects" element={<ProjectsAdmin />} />
           <Route path="/admin/welcome" element={<WelcomeUser />} />
-
-
-
-
-
         </Routes>
         <Footer />
       </AuthProvider>
