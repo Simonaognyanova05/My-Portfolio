@@ -1,5 +1,18 @@
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../config/firebaseConfig";
 export async function getHomeData() {
-    let data = await fetch('http://localhost:2005/');
+    try {
+        const docRef = doc(db, "homePage", "welcomeUser");
+        const docSnap = await getDoc(docRef);
 
-    return data;
+        if (docSnap.exists()) {
+            return docSnap.data();
+        } else {
+            console.error("No such document in Firestore!");
+            return null;
+        }
+    } catch (error) {
+        console.error("Error fetching data from Firestore:", error);
+        throw error;
+    }
 }
