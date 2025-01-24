@@ -1,9 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { updateProject } from '../../services/admin/updateProject';
+import { updateProject } from "../../services/admin/updateProject";
 
 export default function UpdateProject() {
     const navigate = useNavigate();
-    const { projectId } = useParams();
+    const { projectId } = useParams(); 
 
     const updateHandler = async (e) => {
         e.preventDefault();
@@ -16,10 +16,13 @@ export default function UpdateProject() {
         if (res.status === 200) {
             alert('The project was updated successfully!');
             navigate('/admin/projects');
-        };
+        } else {
+            alert(res.message); 
+        }
 
-        e.target.reset();
-    }
+        e.target.reset(); 
+    };
+
     return (
         <section id="admin">
             <div className="content">
