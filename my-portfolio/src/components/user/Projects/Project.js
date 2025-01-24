@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore"; // Firebase функции за четене
-import { db } from "../../../config/firebaseConfig"; // Конфигурация на Firebase
+import { collection, getDocs } from "firebase/firestore"; 
+import { db } from "../../../config/firebaseConfig"; 
 import ProjectCard from "./ProjectCard";
 
 export default function Project() {

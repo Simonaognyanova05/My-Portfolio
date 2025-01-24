@@ -24,6 +24,7 @@ import UpdateProject from "./components/admin/UpdateProject";
 function App() {
   return (
     <>
+    
       <AuthProvider>
         <Header />
 
