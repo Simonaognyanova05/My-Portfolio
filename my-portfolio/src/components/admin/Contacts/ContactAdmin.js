@@ -3,27 +3,37 @@ import { getMessages } from "../../../services/admin/getMessages";
 import ContactContainer from "./ContactContainer";
 
 export default function ContactAdmin() {
-    const [message, setMessage] = useState([]);
+    const [messages, setMessages] = useState([]); 
+    const [loading, setLoading] = useState(true); 
 
     useEffect(() => {
-        getMessages()
-            .then(result => {
-                return result.json();
-            })
-            .then(res => {
-                setMessage(res);
-            })
-    }, [message]);
+        const fetchMessages = async () => {
+            const result = await getMessages();
 
+            if (result.status === 200) {
+                setMessages(result.messages); 
+            } else {
+                console.error(result.message);
+            }
+
+            setLoading(false); 
+        };
+
+        fetchMessages();
+    }, []);
     return (
         <section id="admin">
             <div className="content">
                 <h2>Messages from Users</h2>
-                {
-                    message.length > 0
-                        ? message.map(x => <ContactContainer key={x._id} message={x} />)
+                {loading ? (
+                    <h1>Loading...</h1> 
+                ) : (
+                    messages.length > 0
+                        ? messages.map(message => (
+                            <ContactContainer key={message.id} message={message} />
+                        ))
                         : <h1>No messages!</h1>
-                }
+                )}
             </div>
         </section>
     );
