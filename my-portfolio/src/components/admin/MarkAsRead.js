@@ -10,9 +10,13 @@ export default function MarkAsRead() {
         markAsRead(messageId)
             .then(() => {
                 navigate('/admin/contacts');
-                alert('The message is marked as read!');
-                return;
+                alert('The message has been read and deleted!');
             })
-    }, [])
+            .catch((error) => {
+                alert('Failed to process the message.');
+                console.error(error);
+            });
+    }, [messageId, navigate]);
+
     return null;
 }

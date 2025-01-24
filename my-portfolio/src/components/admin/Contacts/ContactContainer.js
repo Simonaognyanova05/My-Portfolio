@@ -7,7 +7,7 @@ export default function ContactContainer({ message }) {
             <p>{message.message}</p>
             <p><strong>From:</strong> {message.email}</p>
             <div style={{ marginTop: '50px' }}>
-                <Link className="readedMessage" to={`/admin/contacts/${message._id}`}>Mark as read</Link>
+                <Link className="readedMessage" to={`/admin/contacts/${message.id}`}>Mark as read</Link>
             </div>
         </div>
     );

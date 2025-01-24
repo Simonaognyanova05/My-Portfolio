@@ -1,10 +1,19 @@
-export async function markAsRead(messageId) {
-    let result = await fetch(`http://localhost:2005/contact/${messageId}`, {
-        method: 'DELETE',
-        headers: {
-            'content-type': 'application/json'
-        },
-    });
+import { doc, updateDoc, deleteDoc } from "firebase/firestore";
+import { db } from "../../config/firebaseConfig";
 
-    return result;
+export async function markAsRead(messageId) {
+    try {
+        const messageRef = doc(db, "messages", messageId);
+
+        await updateDoc(messageRef, {
+            isRead: true 
+        });
+
+        await deleteDoc(messageRef);
+
+        return { status: 200 };
+    } catch (error) {
+        console.error("Error processing message:", error);
+        throw new Error("Failed to process the message.");
+    }
 }
