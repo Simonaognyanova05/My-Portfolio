@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
 import { getHomeData } from "../../services/user/getHomeData";
+import About from "./About";
+import Project from "./Projects/Project";
+import Contact from "./Contact";
 
 export default function Home() {
-    const [data, setData] = useState(null); 
+    const [data, setData] = useState(null);
 
     useEffect(() => {
         getHomeData()
             .then(res => {
-                setData(res); 
+                setData(res);
             })
             .catch(error => {
                 console.error("Error loading home data:", error);
             });
-    }, []); 
+    }, []);
 
     if (!data) {
         return <p>Loading...</p>;
@@ -20,41 +23,40 @@ export default function Home() {
 
     return (
         <>
-            <section id="home">
-                <div className="intro">
-                    <h1>{data.title}</h1>
-                    <p>{data.subtitle}</p>
-                </div>
-            </section>
-
-            <section id="gallery" style={{ marginBottom: '100px' }}>
-                <div className="content px-4">
-                    <h2 className="text-center text-2xl font-bold mb-6">Gallery</h2>
-                    <div className="gallery-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                        <div className="gallery-item">
-                            <img
-                                src={data.img1}
-                                alt="Gallery Image 1"
-                                className="w-full h-auto aspect-video object-cover rounded-lg shadow-md"
-                            />
-                        </div>
-                        <div className="gallery-item">
-                            <img
-                                src={data.img2}
-                                alt="Gallery Image 2"
-                                className="w-full h-auto aspect-video object-cover rounded-lg shadow-md"
-                            />
-                        </div>
-                        <div className="gallery-item">
-                            <img
-                                src={data.img3}
-                                alt="Gallery Image 3"
-                                className="w-full h-auto aspect-video object-cover rounded-lg shadow-md"
-                            />
+            <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+
+            <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style={{ minHeight: '100vh' }}>
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
+                            <img class="img-fluid w-100 rounded-circle shadow-sm" src={data.img} alt="" />
+                        </div>
+                        <div class="col-lg-7 text-center text-lg-left">
+                            <h3 class="text-white font-weight-normal mb-3">I'm</h3>
+                            <h1 class="display-3 text-uppercase text-primary mb-2" style={{ WebkitTextStroke: '2px #ffffff' }}>{data.title}</h1>
+                            <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
+                            <div class="typed-text d-none">{data.subtitle}</div>
+                            <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+                                <a href="assets/CV.pdf" class="btn btn-outline-light mr-5">Download CV</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <About />
+            <Project />
+            <Contact />
         </>
     );
 }
