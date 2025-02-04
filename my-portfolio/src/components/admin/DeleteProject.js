@@ -14,7 +14,7 @@ export default function DeleteProject() {
 
                 await deleteDoc(projectRef);
 
-                navigate('/projects');
+                navigate('/');
             } catch (error) {
                 console.error("Error deleting project:", error);
                 alert("Неуспешно изтриване на проекта!");
