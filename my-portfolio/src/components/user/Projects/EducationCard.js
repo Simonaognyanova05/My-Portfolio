@@ -23,7 +23,7 @@ export default function EducationCard({ education }) {
                         </Link>
                         <Link
                             className="readedMessage"
-                            to={`/delete/${education.id}`}
+                            to={`/deleteEdu/${education.id}`}
                             style={{ margin: "10px" }}
                         >
                             Delete

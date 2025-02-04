@@ -16,6 +16,7 @@ import UpdateProject from "./components/admin/UpdateProject";
 import EducationAdmin from "./components/admin/EducationAdmin";
 import UpdateEdu from "./components/admin/UpdateEdu";
 import DeleteProject from "./components/admin/DeleteProject";
+import DeleteEdu from "./components/admin/DeleteEdu";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/update/:projectId" element={<UpdateProject />} />
           <Route path="/delete/:projectId" element={<DeleteProject />} />
           <Route path="/updateEdu/:eduId" element={<UpdateEdu />} />
+          <Route path="/deleteEdu/:eduId" element={<DeleteEdu />} />
           <Route path="/admin/about" element={<AboutAdmin />} />
           <Route path="/admin/projects" element={<ProjectsAdmin />} />
           <Route path="/admin/education" element={<EducationAdmin />} />
