@@ -16,7 +16,7 @@ export default function EducationCard({ education }) {
                     <>
                         <Link
                             className="readedMessage"
-                            to={`/update/${education.id}`}
+                            to={`/updateEdu/${education.id}`}
                             style={{ margin: "10px" }}
                         >
                             Edit

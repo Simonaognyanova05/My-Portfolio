@@ -14,6 +14,7 @@ import WelcomeUser from "./components/admin/WelcomeUser";
 import MarkAsRead from "./components/admin/MarkAsRead";
 import UpdateProject from "./components/admin/UpdateProject";
 import EducationAdmin from "./components/admin/EducationAdmin";
+import UpdateEdu from "./components/admin/UpdateEdu";
 
 
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/admin/contacts" element={<ContactAdmin />} />
           <Route path="/admin/contacts/:messageId" element={<MarkAsRead />} />
           <Route path="/update/:projectId" element={<UpdateProject />} />
+          <Route path="/updateEdu/:eduId" element={<UpdateEdu />} />
           <Route path="/admin/about" element={<AboutAdmin />} />
           <Route path="/admin/projects" element={<ProjectsAdmin />} />
           <Route path="/admin/education" element={<EducationAdmin />} />
