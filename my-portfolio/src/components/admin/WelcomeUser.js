@@ -8,9 +8,9 @@ export default function WelcomeUser() {
         e.preventDefault();
 
         let formData = new FormData(e.currentTarget);
-        let { title, subtitle, img1, img2, img3 } = Object.fromEntries(formData);
+        let { title, subtitle, img1 } = Object.fromEntries(formData);
 
-        const result = await updateHomePage(title, subtitle, img1, img2, img3);
+        const result = await updateHomePage(title, subtitle, img1);
 
         if (result.status === 200) {
             alert('Welcome page was updated successfully!');
@@ -31,14 +31,8 @@ export default function WelcomeUser() {
                     <label htmlFor="subtitle">Subtitle:</label>
                     <input type="text" id="subtitle" name="subtitle" required />
 
-                    <label htmlFor="img1">Image 1:</label>
+                    <label htmlFor="img1">Profile Image:</label>
                     <input type="text" id="img1" name="img1" required />
-
-                    <label htmlFor="img2">Image 2:</label>
-                    <input type="text" id="img2" name="img2" required />
-
-                    <label htmlFor="img3">Image 3:</label>
-                    <input type="text" id="img3" name="img3" required />
 
                     <input type="submit" value="Update" />
                 </form>

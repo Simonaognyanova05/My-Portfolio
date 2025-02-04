@@ -13,6 +13,7 @@ import ProjectsAdmin from "./components/admin/ProjectsAdmin";
 import WelcomeUser from "./components/admin/WelcomeUser";
 import MarkAsRead from "./components/admin/MarkAsRead";
 import UpdateProject from "./components/admin/UpdateProject";
+import EducationAdmin from "./components/admin/EducationAdmin";
 
 
 
@@ -33,6 +34,8 @@ function App() {
           <Route path="/update/:projectId" element={<UpdateProject />} />
           <Route path="/admin/about" element={<AboutAdmin />} />
           <Route path="/admin/projects" element={<ProjectsAdmin />} />
+          <Route path="/admin/education" element={<EducationAdmin />} />
+
           <Route path="/admin/welcome" element={<WelcomeUser />} />
         </Routes>
         <Footer />

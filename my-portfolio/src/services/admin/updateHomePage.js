@@ -10,9 +10,7 @@ export async function updateHomePage(title, subtitle, img1, img2, img3) {
             await setDoc(docRef, {
                 title,
                 subtitle,
-                img1,
-                img2,
-                img3,
+                img1
             });
             return { status: 200, message: "Firebase: Data updated successfully" };
         } catch (error) {

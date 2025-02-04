@@ -1,12 +1,39 @@
-export default function EducationCard({ edication }) {
+import { Link } from "react-router-dom";
+import { useAuth } from "../../../contexts/AuthContext";
+
+export default function EducationCard({ education }) {
+    const { admin } = useAuth();
+
     return (
         <div class="border-left border-primary pt-2 pl-4 ml-2">
             <div class="position-relative mb-4">
                 <i class="far fa-dot-circle text-primary position-absolute" style={{ top: '2px;', left: '-32px;' }}></i>
-                <h5 class="font-weight-bold mb-1">Master In CSE</h5>
-                <p class="mb-2"><strong>Cambridge University</strong> | <small>2000 - 2050</small></p>
-                <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p>
+                <h5 class="font-weight-bold mb-1">{education.title}</h5>
+                <p class="mb-2"><strong>{education.subtitle}</strong> | <small>{education.years}</small></p>
+                <p>
+                {education.description}
+                   { Boolean(admin?.email) && (
+                    <>
+                        <Link
+                            className="readedMessage"
+                            to={`/update/${education.id}`}
+                            style={{ margin: "10px" }}
+                        >
+                            Edit
+                        </Link>
+                        <Link
+                            className="readedMessage"
+                            to={`/delete/${education.id}`}
+                            style={{ margin: "10px" }}
+                        >
+                            Delete
+                        </Link>
+                    </>
+                    )}
+
+                </p>
             </div>
         </div>
+
     );
 }
