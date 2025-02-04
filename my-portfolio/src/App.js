@@ -12,6 +12,7 @@ import AboutAdmin from "./components/admin/AboutAdmin";
 import ProjectsAdmin from "./components/admin/ProjectsAdmin";
 import WelcomeUser from "./components/admin/WelcomeUser";
 import MarkAsRead from "./components/admin/MarkAsRead";
+import UpdateProject from "./components/admin/UpdateProject";
 
 
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/admin/" element={<HomeAdmin />} />
           <Route path="/admin/contacts" element={<ContactAdmin />} />
           <Route path="/admin/contacts/:messageId" element={<MarkAsRead />} />
+          <Route path="/update/:projectId" element={<UpdateProject />} />
           <Route path="/admin/about" element={<AboutAdmin />} />
           <Route path="/admin/projects" element={<ProjectsAdmin />} />
           <Route path="/admin/welcome" element={<WelcomeUser />} />

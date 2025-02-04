@@ -22,28 +22,10 @@ export default function Contact() {
     };
 
     return (
-        //     <section id="contact">
-        //         <div className="content">
-        //             <h2>Contact Me</h2>
-        //             <form onSubmit={messageHandler}>
-        //                 <label htmlFor="name">Name:</label>
-        //                 <input type="text" id="name" name="name" required />
-
-        //                 <label htmlFor="email">Email:</label>
-        //                 <input type="email" id="email" name="email" required />
-
-        //                 <label htmlFor="message">Message:</label>
-        //                 <textarea id="message" name="message" required></textarea>
-
-        //                 <input type="submit" value="Send" />
-        //             </form>
-        //         </div>
-        //     </section>
-
         <div class="container-fluid py-5" id="contact">
             <div class="container">
                 <div class="position-relative d-flex align-items-center justify-content-center">
-                    <h1 class="display-1 text-uppercase text-white" style={{WebkitTextStroke: '1px #dee2e6;'}}>Contact</h1>
+                    <h1 class="display-1 text-uppercase text-white" style={{ WebkitTextStroke: '1px #dee2e6;' }}>Contact</h1>
                     <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
                 </div>
                 <div class="row justify-content-center">
