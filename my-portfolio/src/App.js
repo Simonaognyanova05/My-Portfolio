@@ -1,47 +1,27 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
-import Header from "./components/user/Header";
-import Home from "./components/user/Home";
-import Login from "./components/admin/Login";
-import Footer from "./components/user/Footer";
-
-import HomeAdmin from "./components/admin/HomeAdmin";
-import Logout from "./components/admin/Logout";
-import ContactAdmin from "./components/admin/Contacts/ContactAdmin";
-import AboutAdmin from "./components/admin/AboutAdmin";
-import ProjectsAdmin from "./components/admin/ProjectsAdmin";
-import WelcomeUser from "./components/admin/WelcomeUser";
-import MarkAsRead from "./components/admin/MarkAsRead";
-import UpdateProject from "./components/admin/UpdateProject";
-import EducationAdmin from "./components/admin/EducationAdmin";
-import UpdateEdu from "./components/admin/UpdateEdu";
-import DeleteProject from "./components/admin/DeleteProject";
-import DeleteEdu from "./components/admin/DeleteEdu";
-
+import About from "./components/About";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
+import Services from "./components/Services";
+import Contact from "./components/Contact";
 
 function App() {
   return (
     <>
 
       <AuthProvider>
+
         <Header />
+
+
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/admin/login" element={<Login />} />
-          <Route path="/admin/logout" element={<Logout />} />
-          <Route path="/admin/" element={<HomeAdmin />} />
-          <Route path="/admin/contacts" element={<ContactAdmin />} />
-          <Route path="/admin/contacts/:messageId" element={<MarkAsRead />} />
-          <Route path="/update/:projectId" element={<UpdateProject />} />
-          <Route path="/delete/:projectId" element={<DeleteProject />} />
-          <Route path="/updateEdu/:eduId" element={<UpdateEdu />} />
-          <Route path="/deleteEdu/:eduId" element={<DeleteEdu />} />
-          <Route path="/admin/about" element={<AboutAdmin />} />
-          <Route path="/admin/projects" element={<ProjectsAdmin />} />
-          <Route path="/admin/education" element={<EducationAdmin />} />
-
-          <Route path="/admin/welcome" element={<WelcomeUser />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contacts" element={<Contact />} />
         </Routes>
         <Footer />
 
