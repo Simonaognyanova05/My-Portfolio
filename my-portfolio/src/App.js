@@ -3,7 +3,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import Header from "./components/Header";
 import About from "./components/About";
 import Services from "./components/Services";
-import MyWork from "./components/MyWork";
+import MyWork from "./components/MyWork/MyWork";
 import Contact from "./components/Contact";
 
 

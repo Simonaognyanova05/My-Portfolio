@@ -1,0 +1,100 @@
+.isotope-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    /* ⬅️ по-широки колони */
+    gap: 40px;
+    margin-top: 40px;
+    justify-items: center;
+}
+
+.isotope-item figure {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    max-width: 100%;
+}
+
+.isotope-item:hover {
+    transform: translateY(-8px);
+}
+
+.isotope-item img {
+    width: 100%;
+    height: 320px;
+    /* ⬅️ увеличено от 250px на 320px */
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.4s ease;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px;
+    margin-top: 30px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.project-image {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.project-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    color: #ddd;
+    max-width: 600px;
+}
+
+.isotope-item:hover img {
+    transform: scale(1.08);
+}
+
+.isotope-item figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    padding: 25px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.isotope-item:hover figcaption {
+    opacity: 1;
+}
+
+.isotope-toolbar {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-bottom: 40px;
+}
+
+.isotope-toolbar label {
+    cursor: pointer;
+    color: #eee;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    transition: color 0.3s;
+}
+
+.isotope-toolbar label:hover {
+    color: #ff3b3f;
+}

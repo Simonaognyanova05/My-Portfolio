@@ -9,11 +9,11 @@ export default function Header() {
                 <i className="fa fa-times" id="menu-close"></i>
                 <div className="container">
                     <div className="image">
-                        <Link to="#"><img src="assets/images/author-image.jpg" alt="" /></Link>
+                        <Link to="#"><img src="https://i.imgur.com/nLkpP29.jpeg" alt="" /></Link>
                     </div>
                     <div className="author-content">
-                        <h4>Reflux Me</h4>
-                        <span>Web Designer</span>
+                        <h4>Simona Ognyanova</h4>
+                        <span>JavaScript Web Developer</span>
                     </div>
                     <nav className="main-nav" role="navigation">
                         <ul className="main-menu">
