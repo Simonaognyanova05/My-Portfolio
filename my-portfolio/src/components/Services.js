@@ -1,105 +1,61 @@
 export default function Services() {
     return (
-        <div id="services" class="page">
-            <div class="container">
-                <div class="content-wrapper">
-                    <section class="hero glass">
-                        <h1>Our Services</h1>
-                        <p>Comprehensive design and development solutions tailored to your needs</p>
-                    </section>
-
-                    <section class="services-grid">
-                        <div class="service-card glass">
-                            <div class="service-header">
-                                <div class="service-icon">🎨</div>
-                                <h3>UI/UX Design</h3>
-                            </div>
-                            <p>Create stunning user interfaces with modern design principles, focusing on usability and
-                                aesthetic appeal.</p>
-                            <ul class="service-features">
-                                <li>User Research & Analysis</li>
-                                <li>Wireframing & Prototyping</li>
-                                <li>Visual Design & Branding</li>
-                                <li>Responsive Design</li>
-                            </ul>
-                        </div>
-
-                        <div class="service-card glass">
-                            <div class="service-header">
-                                <div class="service-icon">💻</div>
-                                <h3>Web Development</h3>
-                            </div>
-                            <p>Build fast, secure, and scalable websites using the latest web technologies and best
-                                practices.</p>
-                            <ul class="service-features">
-                                <li>Frontend Development</li>
-                                <li>Backend Integration</li>
-                                <li>Performance Optimization</li>
-                                <li>SEO Implementation</li>
-                            </ul>
-                        </div>
-
-                        <div class="service-card glass">
-                            <div class="service-header">
-                                <div class="service-icon">📱</div>
-                                <h3>Mobile Apps</h3>
-                            </div>
-                            <p>Develop native and cross-platform mobile applications that deliver exceptional user
-                                experiences.</p>
-                            <ul class="service-features">
-                                <li>iOS & Android Development</li>
-                                <li>Cross-platform Solutions</li>
-                                <li>App Store Optimization</li>
-                                <li>Maintenance & Updates</li>
-                            </ul>
-                        </div>
-
-                        <div class="service-card glass">
-                            <div class="service-header">
-                                <div class="service-icon">🚀</div>
-                                <h3>Digital Strategy</h3>
-                            </div>
-                            <p>Strategic consulting to help your business thrive in the digital landscape with data-driven
-                                insights.</p>
-                            <ul class="service-features">
-                                <li>Digital Transformation</li>
-                                <li>Analytics & Reporting</li>
-                                <li>Growth Strategy</li>
-                                <li>Technology Consulting</li>
-                            </ul>
-                        </div>
-
-                        <div class="service-card glass">
-                            <div class="service-header">
-                                <div class="service-icon">☁️</div>
-                                <h3>Cloud Solutions</h3>
-                            </div>
-                            <p>Modernize your infrastructure with scalable cloud services and seamless migration strategies.
+        <section className="section my-services" data-section="section2">
+            <div className="container">
+                <div className="section-heading">
+                    <h2>What I’m good at?</h2>
+                    <div className="line-dec"></div>
+                    <span>Curabitur leo felis, rutrum vitae varius eu, malesuada a tortor.
+                        Vestibulum congue leo et tellus aliquam, eu viverra nulla semper.
+                        Nullam eu faucibus diam. Donec eget massa ante.</span>
+                </div>
+                <div className="row">
+                    <div className="col-md-6">
+                        <div className="service-item">
+                            <div className="first-service-icon service-icon"></div>
+                            <h4>HTML5 &amp; CSS3</h4>
+                            <p>
+                                Phasellus non convallis dolor. Integer tempor hendrerit arcu
+                                at bibendum. Sed ac ante non metus vehicula congue quis eget
+                                eros.
                             </p>
-                            <ul class="service-features">
-                                <li>Cloud Migration</li>
-                                <li>DevOps & Automation</li>
-                                <li>Infrastructure as Code</li>
-                                <li>24/7 Monitoring</li>
-                            </ul>
                         </div>
-
-                        <div class="service-card glass">
-                            <div class="service-header">
-                                <div class="service-icon">🔐</div>
-                                <h3>Cybersecurity</h3>
-                            </div>
-                            <p>Protect your digital assets with comprehensive security solutions and threat protection.</p>
-                            <ul class="service-features">
-                                <li>Security Auditing</li>
-                                <li>Penetration Testing</li>
-                                <li>Data Protection</li>
-                                <li>Compliance Management</li>
-                            </ul>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="service-item">
+                            <div className="second-service-icon service-icon"></div>
+                            <h4>Creative Ideas</h4>
+                            <p>
+                                Proin lacus massa, eleifend sed fermentum in, dignissim vel
+                                metus. Nunc accumsan leo nec felis porttitor, ultricies
+                                faucibus purus mollis.
+                            </p>
                         </div>
-                    </section>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="service-item">
+                            <div className="third-service-icon service-icon"></div>
+                            <h4>Easy Customize</h4>
+                            <p>
+                                Integer suscipit condimentum aliquet. Nam quis risus metus.
+                                Nullam faucibus quam eget arcu pretium tincidunt. Nam libero
+                                dui.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="service-item">
+                            <div className="fourth-service-icon service-icon"></div>
+                            <h4>Admin Dashboard</h4>
+                            <p>
+                                Vivamus et dui a massa venenatis fringilla. Proin lacus massa,
+                                eleifend sed fermentum in, dignissim vel metus. Nunc accumsan
+                                leo nec felis porttitor.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

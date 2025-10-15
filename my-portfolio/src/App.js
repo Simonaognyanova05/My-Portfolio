@@ -1,11 +1,11 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
-import About from "./components/About";
 import Header from "./components/Header";
-import Home from "./components/Home";
-import Footer from "./components/Footer";
+import About from "./components/About";
 import Services from "./components/Services";
+import MyWork from "./components/MyWork";
 import Contact from "./components/Contact";
+
 
 function App() {
   return (
@@ -13,17 +13,17 @@ function App() {
 
       <AuthProvider>
 
-        <Header />
+        <div id="page-wraper">
+          <Header />
+          <Routes>
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/my-work" element={<MyWork />} />
+            <Route path="/contact" element={<Contact />} />
 
+          </Routes>
+        </div>
 
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contacts" element={<Contact />} />
-        </Routes>
-        <Footer />
 
       </AuthProvider>
     </>

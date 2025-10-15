@@ -1,89 +1,56 @@
 export default function Contact() {
     return (
-        <div id="contact" class="page">
-            <div class="container">
-                <div class="content-wrapper">
-                    <section class="contact-grid">
-                        <div class="contact-form glass">
-                            <h2>Get In Touch</h2>
-                            <form>
-                                <div class="form-group">
-                                    <label for="name">Full Name</label>
-                                    <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+        <section className="section contact-me" data-section="section4">
+            <div className="container">
+                <div className="section-heading">
+                    <h2>Contact Me</h2>
+                    <div className="line-dec"></div>
+                    <span>Fusce eget nibh nec justo interdum condimentum. Morbi justo ex,
+                        efficitur at ante ac, tincidunt maximus ligula. Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elit.</span>
+                </div>
+                <div className="row">
+                    <div className="right-content">
+                        <div className="container">
+                            <form id="contact" action="" method="post">
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <fieldset>
+                                            <input name="name" type="text" className="form-control" id="name" placeholder="Your name..."
+                                                required="" />
+                                        </fieldset>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <fieldset>
+                                            <input name="email" type="text" className="form-control" id="email" placeholder="Your email..."
+                                                required="" />
+                                        </fieldset>
+                                    </div>
+                                    <div className="col-md-12">
+                                        <fieldset>
+                                            <input name="subject" type="text" className="form-control" id="subject" placeholder="Subject..."
+                                                required="" />
+                                        </fieldset>
+                                    </div>
+                                    <div className="col-md-12">
+                                        <fieldset>
+                                            <textarea name="message" rows="6" className="form-control" id="message" placeholder="Your message..."
+                                                required=""></textarea>
+                                        </fieldset>
+                                    </div>
+                                    <div className="col-md-12">
+                                        <fieldset>
+                                            <button type="submit" id="form-submit" className="button">
+                                                Send Message
+                                            </button>
+                                        </fieldset>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="email">Email Address</label>
-                                    <input type="email" id="email" name="email" placeholder="Enter your email" required />
-                                </div>
-                                <div class="form-group">
-                                    <label for="subject">Subject</label>
-                                    <input type="text" id="subject" name="subject" placeholder="What's this about?" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Message</label>
-                                    <textarea id="message" name="message" placeholder="Tell us about your project..."
-                                        required></textarea>
-                                </div>
-                                <button type="submit" class="cta-button">Send Message</button>
                             </form>
                         </div>
-
-                        <div class="contact-info glass">
-                            <h2>Contact Information</h2>
-
-                            <div class="contact-item">
-                                <div class="contact-item-icon">📧</div>
-                                <div class="contact-item-text">
-                                    <h4>Email</h4>
-                                    <p>hello@glossytouch.com</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="contact-item-icon">📞</div>
-                                <div class="contact-item-text">
-                                    <h4>Phone</h4>
-                                    <p>+1 (555) 123-4567</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="contact-item-icon">📍</div>
-                                <div class="contact-item-text">
-                                    <h4>Address</h4>
-                                    <p>123 Design Street<br />Creative District, CD 12345</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="contact-item-icon">🕒</div>
-                                <div class="contact-item-text">
-                                    <h4>Business Hours</h4>
-                                    <p>Mon-Fri: 9AM-6PM<br />Sat-Sun: 10AM-4PM</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="contact-map-section">
-                        <div class="contact-map glass">
-                            <h2>Find Us</h2>
-                            <div class="map-container">
-                                <div class="map-placeholder">
-                                    <div class="map-placeholder-icon">🗺️</div>
-                                    <p><strong>Interactive Map Area</strong></p>
-                                    <p>123 Design Street</p>
-                                    <p>Creative District, CD 12345</p>
-                                    <p style={{ marginTop: "15px", fontSize: "12px", opacity: "0.7" }}>
-                                        Map integration can be added with<br />
-                                        Google Maps, OpenStreetMap, or Mapbox
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

@@ -3,22 +3,51 @@ import { Link } from "react-router-dom";
 export default function Header() {
     return (
 
-        <header>
-            <div class="container">
-                <nav class="glass">
-                    <Link to='/' style={{textDecoration: 'none'}}>
-                        <div class="logo">
-                            <span>Glossy Touch</span>
-                        </div>
-                    </Link>
-                    <div class="nav-links">
-                        <Link to='/'>Home</Link>
-                        <Link to='/about'>About</Link>
-                        <Link to='/services'>Services</Link>
-                        <Link to='/contact'>Contact</Link>
+        <div className="responsive-nav">
+            <i className="fa fa-bars" id="menu-toggle"></i>
+            <div id="menu" className="menu">
+                <i className="fa fa-times" id="menu-close"></i>
+                <div className="container">
+                    <div className="image">
+                        <Link to="#"><img src="assets/images/author-image.jpg" alt="" /></Link>
                     </div>
-                </nav>
+                    <div className="author-content">
+                        <h4>Reflux Me</h4>
+                        <span>Web Designer</span>
+                    </div>
+                    <nav className="main-nav" role="navigation">
+                        <ul className="main-menu">
+                            <li><Link to="/about">About Me</Link></li>
+                            <li><Link to="/services">What I’m good at</Link></li>
+                            <li><Link to="/my-work">My Work</Link></li>
+                            <li><Link to="/contact">Contact Me</Link></li>
+                        </ul>
+                    </nav>
+                    <div className="social-network">
+                        <ul className="soial-icons">
+                            <li>
+                                <Link to="https://fb.com/templatemo"><i className="fa fa-facebook"></i></Link>
+                            </li>
+                            <li>
+                                <Link to="#"><i className="fa fa-twitter"></i></Link>
+                            </li>
+                            <li>
+                                <Link to="#"><i className="fa fa-linkedin"></i></Link>
+                            </li>
+                            <li>
+                                <Link to="#"><i className="fa fa-dribbble"></i></Link>
+                            </li>
+                            <li>
+                                <Link to="#"><i className="fa fa-rss"></i></Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="copyright-text">
+                        <p>Copyright 2019 Reflux Design</p>
+                    </div>
+                </div>
             </div>
-        </header>
+        </div>
+
     );
 }
