@@ -1,11 +1,20 @@
-export async function loginAdmin(username, password) {
-    let admin = await fetch('http://localhost:2005/login', {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify({ username, password })
-    });
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../config/firebaseConfig";
 
-    return admin;
+export async function loginAdmin(email, password) {
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        return {status: 200, admin: userCredential.user}; // Връщаме само потребителя
+    } catch (error) {
+        console.error("Firebase Auth Error Code:", error.code);
+        console.error("Firebase Auth Error Message:", error.message);
+
+        if (error.code === "auth/user-not-found") {
+            throw new Error("Потребителят не съществува!");
+        } else if (error.code === "auth/wrong-password") {
+            throw new Error("Грешна парола!");
+        } else {
+            throw new Error("Възникна грешка при влизане!");
+        }
+    }
 }

@@ -21,6 +21,8 @@ export default function Header() {
                             <li><Link to="/services">What I’m good at</Link></li>
                             <li><Link to="/my-work">My Work</Link></li>
                             <li><Link to="/contact">Contact Me</Link></li>
+                            <li><Link to="/login">Login</Link></li>
+
                         </ul>
                     </nav>
                     <div className="social-network">
