@@ -1,10 +1,24 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import { doc, deleteDoc } from "firebase/firestore";
+import { db } from "../../config/firebaseConfig";
 
 export default function AboutItem({ education }) {
     const { admin } = useAuth();
 
+    const handleDelete = async () => {
+        const confirmDelete = window.confirm("Are you sure you want to delete this education??");
+        if (!confirmDelete) return;
 
+        try {
+            await deleteDoc(doc(db, "education", education.id));
+            alert("Education was successfully deleted..");
+            window.location.reload();
+        } catch (error) {
+            console.error("Error while deleting:", error);
+            alert("Error while deleting.");
+        }
+    };
     return (
         <div className="left-image-post">
             <div className="row">
@@ -22,7 +36,7 @@ export default function AboutItem({ education }) {
                         {
                             education.link !== ""
                                 ? <div className="white-button">
-                                    <a href={education.link}>My GitHub</a>
+                                    <a href={education.link}>Read More</a>
                                 </div>
                                 : ""
                         }
@@ -31,7 +45,7 @@ export default function AboutItem({ education }) {
                                 ? <>
                                     <div className="white-button">
                                         <Link to={`/editEdu/${education.id}`}>Edit</Link>
-                                        <a href={education.link}>Delete</a>
+                                        <Link to="" onClick={handleDelete}>Delete</Link>
 
                                     </div>
                                 </>
