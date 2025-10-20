@@ -2,7 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import Header from "./components/Header";
 import About from "./components/About/About";
-import Services from "./components/Services";
+import Services from "./components/Services/Services";
 import MyWork from "./components/MyWork/MyWork";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
