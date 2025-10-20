@@ -1,6 +1,34 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function Header() {
+    const {admin} = useAuth();
+
+    const loggedAdmin = (
+        <nav className="main-nav" role="navigation">
+            <ul className="main-menu">
+                <li><Link to="/adminAbout">About Me</Link></li>
+                <li><Link to="/services">What I’m good at</Link></li>
+                <li><Link to="/my-work">My Work</Link></li>
+                <li><Link to="/contact">Contact Me</Link></li>
+                <li><Link to="/logout">Logout</Link></li>
+
+            </ul>
+        </nav>
+    );
+
+    const unloggedAdmin = (
+        <nav className="main-nav" role="navigation">
+            <ul className="main-menu">
+                <li><Link to="/">About Me</Link></li>
+                <li><Link to="/services">What I’m good at</Link></li>
+                <li><Link to="/my-work">My Work</Link></li>
+                <li><Link to="/contact">Contact Me</Link></li>
+                <li><Link to="/login">Login</Link></li>
+
+            </ul>
+        </nav>
+    );
     return (
 
         <div className="responsive-nav">
@@ -15,16 +43,11 @@ export default function Header() {
                         <h4>Simona Ognyanova</h4>
                         <span>JavaScript Web Developer</span>
                     </div>
-                    <nav className="main-nav" role="navigation">
-                        <ul className="main-menu">
-                            <li><Link to="/">About Me</Link></li>
-                            <li><Link to="/services">What I’m good at</Link></li>
-                            <li><Link to="/my-work">My Work</Link></li>
-                            <li><Link to="/contact">Contact Me</Link></li>
-                            <li><Link to="/login">Login</Link></li>
-
-                        </ul>
-                    </nav>
+                    {
+                        Boolean(admin.email)
+                        ? loggedAdmin
+                        : unloggedAdmin
+                    }
                     <div className="social-network">
                         <ul className="soial-icons">
                             <li>
