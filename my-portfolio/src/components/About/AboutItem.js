@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 
 export default function AboutItem({ education }) {
@@ -29,7 +30,7 @@ export default function AboutItem({ education }) {
                             Boolean(admin.email)
                                 ? <>
                                     <div className="white-button">
-                                        <a href={education.link}>Edit</a>
+                                        <Link to={`/editEdu/${education.id}`}>Edit</Link>
                                         <a href={education.link}>Delete</a>
 
                                     </div>
