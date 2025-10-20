@@ -4,7 +4,7 @@ import { auth } from "../config/firebaseConfig";
 export async function loginAdmin(email, password) {
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        return {status: 200, admin: userCredential.user}; // Връщаме само потребителя
+        return userCredential.user; // Връщаме само потребителя
     } catch (error) {
         console.error("Firebase Auth Error Code:", error.code);
         console.error("Firebase Auth Error Message:", error.message);

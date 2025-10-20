@@ -1,24 +1,23 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginAdmin } from "../services/loginAdmin";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function Login() {
     const navigate = useNavigate();
+    const { onLoginAdmin } = useAuth();
 
     const loginHandler = async (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
-        const {email, password} = Object.fromEntries(formData);
+        const { email, password } = Object.fromEntries(formData);
 
         const result = await loginAdmin(email, password);
 
-        if(result.status == 200){
-            alert('Successful login!');
-            navigate('/');
-        }else{
-            alert('Invalid email or password!');
-        }
+        alert('Successful login!');
+        onLoginAdmin(result);
+        navigate('/');
     }
     return (
         <section className="section contact-me" data-section="section4">
@@ -49,7 +48,7 @@ export default function Login() {
                                     <div className="col-md-12">
                                         <fieldset>
                                             <button type="submit" id="form-submit" className="button">
-                                               Login
+                                                Login
                                             </button>
                                         </fieldset>
                                     </div>

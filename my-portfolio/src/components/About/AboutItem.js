@@ -1,4 +1,9 @@
+import { useAuth } from "../../contexts/AuthContext";
+
 export default function AboutItem({ education }) {
+    const { admin } = useAuth();
+
+
     return (
         <div className="left-image-post">
             <div className="row">
@@ -18,6 +23,17 @@ export default function AboutItem({ education }) {
                                 ? <div className="white-button">
                                     <a href={education.link}>My GitHub</a>
                                 </div>
+                                : ""
+                        }
+                        {
+                            Boolean(admin.email)
+                                ? <>
+                                    <div className="white-button">
+                                        <a href={education.link}>Edit</a>
+                                        <a href={education.link}>Delete</a>
+
+                                    </div>
+                                </>
                                 : ""
                         }
 
