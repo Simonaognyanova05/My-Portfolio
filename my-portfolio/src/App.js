@@ -7,6 +7,7 @@ import MyWork from "./components/MyWork/MyWork";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
 import AdminAbout from "./components/AdminAbout";
+import Logout from "./components/Logout";
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/adminAbout" element={<AdminAbout />} />
+            <Route path="/logout" element={<Logout />} />
+
 
 
 
