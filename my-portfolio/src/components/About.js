@@ -5,8 +5,7 @@ export default function About() {
                 <div className="section-heading">
                     <h2>About Me</h2>
                     <div className="line-dec"></div>
-                    <span>This is a Bootstrap v4.2.1 CSS Template for you. Edit and use
-                        this layout for your site. Updated on 21 May 2019 for repeated main menu HTML code.</span>
+                    <span>Let me tell you about my skills and competencies.</span>
                 </div>
                 <div className="left-image-post">
                     <div className="row">
@@ -17,16 +16,12 @@ export default function About() {
                         </div>
                         <div className="col-md-6">
                             <div className="right-text">
-                                <h4>Reflux HTML CSS Template</h4>
+                                <h4>JS Web Developer</h4>
                                 <p>
-                                    Donec tristique feugiat lacus, at sollicitudin nunc euismod
-                                    sed. Mauris viverra, erat non sagittis gravida, elit dui
-                                    mollis ante, sit amet eleifend purus ligula eget eros. Sed
-                                    tincidunt quam vitae neque pharetra dignissim eget ut
-                                    libero.
+                                    I am a dynamic, motivated and goal-oriented person with a background in web programming. I have in-depth knowledge of working with modern Front-End and Back-End technologies, such as React.js, Node.js and MongoDB, all of which I acquired through independent research and study. In addition, I am currently studying C and C# OOP at university. I love creating effective, intuitive and functional web applications. I am committed to constantly upgrading my skills and prefer self-learning, because this is how a person shows true desire and discipline.
                                 </p>
                                 <div className="white-button">
-                                    <a href="#">Read More</a>
+                                    <a href="https://github.com/Simonaognyanova05">My GitHub</a>
                                 </div>
                             </div>
                         </div>

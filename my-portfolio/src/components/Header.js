@@ -17,7 +17,7 @@ export default function Header() {
                     </div>
                     <nav className="main-nav" role="navigation">
                         <ul className="main-menu">
-                            <li><Link to="/about">About Me</Link></li>
+                            <li><Link to="/">About Me</Link></li>
                             <li><Link to="/services">What I’m good at</Link></li>
                             <li><Link to="/my-work">My Work</Link></li>
                             <li><Link to="/contact">Contact Me</Link></li>

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginAdmin } from "../services/admin/loginAdmin";
+import { loginAdmin } from "../services/loginAdmin";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -15,7 +15,7 @@ export default function Login() {
 
         if(result.status == 200){
             alert('Successful login!');
-            navigate('/about');
+            navigate('/');
         }else{
             alert('Invalid email or password!');
         }
