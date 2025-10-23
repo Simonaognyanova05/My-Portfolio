@@ -11,6 +11,7 @@ import Logout from "./components/Logout";
 import EditEducation from "./components/EditEducation";
 import EditAbout from "./components/EditAbout";
 import AdminServices from "./components/AdminServices";
+import EditProject from "./components/EditProject";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path="/adminEdu" element={<AdminEdu />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/editEdu/:eduId" element={<EditEducation />} />
+            <Route path="/editProject/:projectId" element={<EditProject />} />
             <Route path="/editAbout" element={<EditAbout />} />
             <Route path="/adminServices" element={<AdminServices />} />
 
