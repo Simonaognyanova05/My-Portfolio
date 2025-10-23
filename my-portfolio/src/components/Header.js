@@ -8,9 +8,9 @@ export default function Header() {
         <nav className="main-nav" role="navigation">
             <ul className="main-menu">
                 <li><Link to="/">About Me</Link></li>
-                <li><Link to="/adminAbout">Edit About Me</Link></li>
+                <li><Link to="/editAbout">Edit About Me</Link></li>
                 <li><Link to="/services">My education</Link></li>
-                <li><Link to="/services">Edit education</Link></li>
+                <li><Link to="/adminEdu">Add education</Link></li>
                 <li><Link to="/my-work">My Work</Link></li>
                 <li><Link to="/contact">Contact Me</Link></li>
                 <li><Link to="/logout">Logout</Link></li>

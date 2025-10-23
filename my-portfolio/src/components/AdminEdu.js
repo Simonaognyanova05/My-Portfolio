@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { createEducation } from "../services/createEducation";
 
-export default function AdminAbout() {
+export default function AdminEdu() {
     const navigate = useNavigate();
 
     const createHandler = async(e) => {

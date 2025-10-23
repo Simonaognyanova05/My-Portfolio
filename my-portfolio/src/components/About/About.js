@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import AboutItem from "./AboutItem";
-import { getEducations } from "../../services/getEducations";
+import { getAboutMeInfo } from "../../services/getAboutMeInfo";
 
 export default function About() {
-    const [edu, setEdu] = useState([]);
+    const [info, setInfo] = useState({});
 
     useEffect(() => {
-        getEducations()
+        getAboutMeInfo()
         .then(res => {
-            setEdu(res);
+            setInfo(res);
         })
         .catch(err => {
             alert(err);
@@ -23,7 +23,7 @@ export default function About() {
                     <span>Let me tell you about my skills and competencies.</span>
                 </div>
 
-                {edu.map(x => <AboutItem key={x.id} education={x} />)}
+                <AboutItem key={info.id} information={info} />
                 
             </div>
         </section>

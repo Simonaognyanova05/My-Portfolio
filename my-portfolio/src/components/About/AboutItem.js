@@ -3,7 +3,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { doc, deleteDoc } from "firebase/firestore";
 import { db } from "../../config/firebaseConfig";
 
-export default function AboutItem({ education }) {
+export default function AboutItem({ information }) {
     const { admin } = useAuth();
 
     const handleDelete = async () => {
@@ -11,7 +11,7 @@ export default function AboutItem({ education }) {
         if (!confirmDelete) return;
 
         try {
-            await deleteDoc(doc(db, "education", education.id));
+            await deleteDoc(doc(db, "education", information.id));
             alert("Education was successfully deleted..");
             window.location.reload();
         } catch (error) {
@@ -24,19 +24,19 @@ export default function AboutItem({ education }) {
             <div className="row">
                 <div className="col-md-6">
                     <div className="left-image">
-                        <img src={education.img} alt="" />
+                        <img src={information.img} alt="" />
                     </div>
                 </div>
                 <div className="col-md-6">
                     <div className="right-text">
-                        <h4>{education.subject}</h4>
+                        <h4>{information.subject}</h4>
                         <p>
-                            {education.description}
+                            {information.description}
                         </p>
                         {
-                            education.link !== ""
+                            information.link !== ""
                                 ? <div className="white-button">
-                                    <a href={education.link}>Read More</a>
+                                    <a href={information.link}>Read More</a>
                                 </div>
                                 : ""
                         }
@@ -44,7 +44,7 @@ export default function AboutItem({ education }) {
                             Boolean(admin.email)
                                 ? <>
                                     <div className="white-button">
-                                        <Link to={`/editEdu/${education.id}`}>Edit</Link>
+                                        <Link to={`/editEdu/${information.id}`}>Edit</Link>
                                         <Link to="" onClick={handleDelete}>Delete</Link>
 
                                     </div>

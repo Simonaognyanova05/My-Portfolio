@@ -6,9 +6,10 @@ import Services from "./components/Services/Services";
 import MyWork from "./components/MyWork/MyWork";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
-import AdminAbout from "./components/AdminAbout";
+import AdminEdu from "./components/AdminEdu";
 import Logout from "./components/Logout";
 import EditEducation from "./components/EditEducation";
+import EditAbout from "./components/EditAbout";
 
 
 function App() {
@@ -25,9 +26,11 @@ function App() {
             <Route path="/my-work" element={<MyWork />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/adminAbout" element={<AdminAbout />} />
+            <Route path="/adminEdu" element={<AdminEdu />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/editEdu/:eduId" element={<EditEducation />} />
+            <Route path="/editAbout" element={<EditAbout />} />
+
 
 
 
