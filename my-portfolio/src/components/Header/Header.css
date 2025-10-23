@@ -1,0 +1,17 @@
+.menu {
+    display: block;
+}
+
+.menu.open {
+    display: block;
+}
+
+@media (max-width: 991px) {
+    .menu {
+        display: none;
+    }
+
+    .menu.open {
+        display: block;
+    }
+}
