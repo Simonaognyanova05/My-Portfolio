@@ -40,17 +40,6 @@ export default function AboutItem({ information }) {
                                 </div>
                                 : ""
                         }
-                        {
-                            Boolean(admin.email)
-                                ? <>
-                                    <div className="white-button">
-                                        <Link to={`/editEdu/${information.id}`}>Edit</Link>
-                                        <Link to="" onClick={handleDelete}>Delete</Link>
-
-                                    </div>
-                                </>
-                                : ""
-                        }
 
                     </div>
                 </div>

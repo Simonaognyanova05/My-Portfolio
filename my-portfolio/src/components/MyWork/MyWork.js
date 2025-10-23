@@ -1,4 +1,5 @@
 import './MyWork.css';
+import { Link } from 'react-router-dom';
 
 export default function MyWork() {
     return (
@@ -28,7 +29,10 @@ export default function MyWork() {
                             Виж проекта →
                         </a>
                     </div>
-
+                    <div className="white-button mt-auto">
+                        <Link to="">Edit</Link>
+                        <Link to="">Delete</Link>
+                    </div>
 
                 </div>
             </div>

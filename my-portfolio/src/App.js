@@ -10,6 +10,7 @@ import AdminEdu from "./components/AdminEdu";
 import Logout from "./components/Logout";
 import EditEducation from "./components/EditEducation";
 import EditAbout from "./components/EditAbout";
+import AdminServices from "./components/AdminServices";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/editEdu/:eduId" element={<EditEducation />} />
             <Route path="/editAbout" element={<EditAbout />} />
+            <Route path="/adminServices" element={<AdminServices />} />
 
 
 

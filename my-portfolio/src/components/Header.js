@@ -12,6 +12,7 @@ export default function Header() {
                 <li><Link to="/services">My education</Link></li>
                 <li><Link to="/adminEdu">Add education</Link></li>
                 <li><Link to="/my-work">My Work</Link></li>
+                <li><Link to="/adminServices">Add project</Link></li>
                 <li><Link to="/contact">Contact Me</Link></li>
                 <li><Link to="/logout">Logout</Link></li>
 
