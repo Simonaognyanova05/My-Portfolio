@@ -12,6 +12,7 @@ import EditEducation from "./components/EditEducation";
 import EditAbout from "./components/EditAbout";
 import AdminServices from "./components/AdminServices";
 import EditProject from "./components/EditProject";
+import Messages from "./components/Messages/Messages";
 
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
             <Route path="/editProject/:projectId" element={<EditProject />} />
             <Route path="/editAbout" element={<EditAbout />} />
             <Route path="/adminServices" element={<AdminServices />} />
+            <Route path="/messages" element={<Messages />} />
+
 
 
 
