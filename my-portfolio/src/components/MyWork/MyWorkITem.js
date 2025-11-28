@@ -36,7 +36,7 @@ export default function MyWorkItem({ project }) {
                     rel="noopener noreferrer"
                     className="project-link"
                 >
-                    Виж проекта →
+                    See the project →
                 </a>
             </div>
 
