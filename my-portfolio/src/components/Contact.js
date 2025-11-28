@@ -1,4 +1,25 @@
+import { useNavigate } from 'react-router-dom';
+import { sendMessage } from '../services/sendMessage';
+
 export default function Contact() {
+    const navigate = useNavigate();
+
+    const sendHandler = async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.currentTarget);
+        const { name, email, subject, message } = Object.fromEntries(formData);
+
+        let res = await sendMessage(name, email, subject, message);
+
+        if (res.status == 200) {
+            alert("Message was send successfully!");
+            e.target.reset();
+            navigate('/contact');
+        } else {
+            alert("Error");
+        }
+    }
     return (
         <section className="section contact-me" data-section="section4">
             <div className="container">
@@ -12,7 +33,7 @@ export default function Contact() {
                 <div className="row">
                     <div className="right-content">
                         <div className="container">
-                            <form id="contact" action="" method="post">
+                            <form id="contact" onSubmit={sendHandler}>
                                 <div className="row">
                                     <div className="col-md-6">
                                         <fieldset>

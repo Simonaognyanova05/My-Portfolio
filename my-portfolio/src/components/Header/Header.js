@@ -61,11 +61,11 @@ export default function Header() {
 
                     <div className="social-network">
                         <ul className="social-icons">
-                            <li><Link to="https://fb.com/templatemo"><i className="fa fa-facebook"></i></Link></li>
-                            <li><Link to="#"><i className="fa fa-twitter"></i></Link></li>
-                            <li><Link to="#"><i className="fa fa-linkedin"></i></Link></li>
-                            <li><Link to="#"><i className="fa fa-dribbble"></i></Link></li>
-                            <li><Link to="#"><i className="fa fa-rss"></i></Link></li>
+                            <li><Link to="https://www.facebook.com/profile.php?id=100093252804720"><i className="fa fa-facebook"></i></Link></li>
+                            <li><Link to="https://www.instagram.com/s_ognyanovaa/"><i className="fa fa-instagram"></i></Link></li>
+                            <li><Link to="https://www.linkedin.com/in/simona-ognyanova-364435316/"><i className="fa fa-linkedin"></i></Link></li>
+                            <li><Link to="https://github.com/Simonaognyanova05"><i className="fa fa-github"></i></Link></li>
+
                         </ul>
                     </div>
 
