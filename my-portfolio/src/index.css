@@ -11,3 +11,5 @@
 
 /* Admin edit loading and error states */
 .admin-state{min-height:55vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;color:var(--muted);font-size:13px}.admin-state i{width:34px;height:34px;border:2px solid var(--line);border-top-color:var(--violet);border-radius:50%;animation:admin-spin .75s linear infinite}.admin-state b{color:var(--text);font-size:18px}.admin-state button{padding:12px 18px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);cursor:pointer}@keyframes admin-spin{to{transform:rotate(360deg)}}
+
+.manifesto>p{white-space:pre-line}
