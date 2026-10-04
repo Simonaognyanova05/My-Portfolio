@@ -8,7 +8,7 @@ const fields = [
     { name: "title", label: "Project title", placeholder: "Project name", group: "content" },
     { name: "description", label: "Project description", placeholder: "Describe the project, your role, and the outcome", group: "content", multiline: true },
     { name: "link", label: "Project URL", placeholder: "https://your-project.com", group: "media" },
-    { name: "img", label: "Cover image URL", placeholder: "https://images.com/project.jpg", group: "media" }
+    { name: "img", label: "Cover image URL · Optional", placeholder: "https://images.com/project.jpg", group: "media", optional: true }
 ];
 
 export default function EditProject() {

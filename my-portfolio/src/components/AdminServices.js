@@ -38,7 +38,7 @@ export default function AdminServices() {
                         <div className="admin-section-title"><h2>Links & preview</h2><p>Connect the live project and its featured image.</p></div>
                         <div className="admin-field-grid">
                             <label><span>Project URL</span><input name="link" type="url" placeholder="https://your-project.com" required /></label>
-                            <label><span>Cover image URL</span><input name="img" type="url" placeholder="https://images.com/project.jpg" required /></label>
+                            <label><span>Cover image URL <small>Optional</small></span><input name="img" type="url" placeholder="https://images.com/project.jpg" /></label>
                         </div>
                     </div>
                 </div>

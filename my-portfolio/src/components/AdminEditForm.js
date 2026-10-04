@@ -55,7 +55,7 @@ export default function AdminEditForm({ kind, loadItem, saveItem, onCancel, fiel
                     <span className="admin-step">02</span>
                     <div className="admin-fields">
                         <div className="admin-section-title"><h2>Links & media</h2><p>Keep external links and imagery up to date.</p></div>
-                        <div className="admin-field-grid">{linkFields.map((field) => <label key={field.name}><span>{field.label}</span><input name={field.name} type="url" value={item[field.name] || ""} onChange={handleChange} placeholder={field.placeholder} required /></label>)}</div>
+                        <div className="admin-field-grid">{linkFields.map((field) => <label key={field.name}><span>{field.label}</span><input name={field.name} type="url" value={item[field.name] || ""} onChange={handleChange} placeholder={field.placeholder} required={!field.optional} /></label>)}</div>
                     </div>
                 </div>
                 <div className="admin-form-actions">
